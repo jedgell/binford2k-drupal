@@ -6,7 +6,7 @@ package { [ 'mysql', 'httpd', 'php-mysql',  ]:
   ensure => present,
 } ->
 
-service { 'mysql', 'httpd']:
+service { ['mysql', 'httpd']:
   ensure => running,
   enable => true,
 } ->
