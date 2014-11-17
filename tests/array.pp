@@ -1,3 +1,5 @@
+$sites = [ 'one.mysite.com', 'two.mysite.com', 'three.mysite.com' ]
+
 package { 'php':
   ensure => '5.2.4',
 } ->
@@ -11,7 +13,6 @@ service { ['mysql', 'httpd']:
   enable => true,
 } ->
 
-$sites = [ 'one.mysite.com', 'two.mysite.com', 'three.mysite.com' ]
 drupal::site { $sites:
   ensure => present,
 }
