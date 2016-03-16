@@ -6,7 +6,7 @@ class drupal::package::remote (
 
   exec { 'install drupal':
     command => "/bin/tar --no-same-owner -xf /tmp/drupal-${version}.tar.gz -C ${installroot} && rm /tmp/drupal-${version}.tar.gz",
-    onlyif  => "/usr/bin/wget http://ftp.drupal.org/files/projects/drupal-${version}.tar.gz -O /tmp/drupal-${version}.tar.gz",
+    onlyif  => "/usr/bin/wget https://ftp.drupal.org/files/projects/drupal-${version}.tar.gz -O /tmp/drupal-${version}.tar.gz",
     creates => "${installroot}/drupal-${version}",
   }
 
